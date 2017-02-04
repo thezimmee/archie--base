@@ -1,0 +1,23 @@
+{
+    "site": {
+        "name": "Example dot com",
+        "url": "www.example.com",
+        "email": "www@example.com",
+        "items": ["one", "two", "three"],
+        "object": {
+            "key": "value",
+            "key2": "value2",
+            "key3": "value3"
+        }
+    },
+    "component1": {
+        "test": "hi",
+        "name": "element1",
+        "list": ["one", "two", "three"]
+    },
+    "component2": {
+        "test": "hi",
+        "name": "element2",
+        "list": [1, 2, 3]
+    }
+}

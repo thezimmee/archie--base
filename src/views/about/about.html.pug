@@ -1,0 +1,7 @@
+extends /src/theme/layout.pug
+
+block append head
+	script(src='about.js')
+
+block body
+	h1 I am the #{page ? page.name || 'about' : 'about'} page.
