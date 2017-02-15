@@ -1,0 +1,40 @@
+{
+    "name": "<%= project.name %>",
+    "version": "<%= project.version %>",<% if (project.private) { %>
+    "private": true,<% } %>
+    "description": "<%= project.description %>",
+    "author": {
+        "name": "<%= project.author.name %>",
+        "email": "<%= project.author.email %>",
+        "url": "<%= project.author.url %>"
+    },
+    "license": "<%= project.license %>",
+    "bugs": {
+        "url": "https://<%= project.repo.location %>.com/<%= project.repo.id %>/<%= project.name.toLowerCase() %>/issues"
+    },
+    "homepage": "<%= project.homepage %>",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "pug": "^2.0.0-beta11",
+        "pug-cli": "^1.0.0-alpha6"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:pug": "pug <%= globs.pages %> --obj <%= pug.options.data %> --out <%= dirs.dest %> --basedir .",
+        "postbuild:pug": "for file in <%= dirs.dest %>/*.html.html; do mv \"$file\" \"<%= '${file%.html.html}.html' %>\"; done",
+        "watch:pug": "npm run build:pug -- --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "<%=
+            (project.repo.protocol === 'https' ? 'https://' : 'git@') +
+            (project.repo.location === 'bitbucket' && project.repo.protocol === 'https' ? project.repo.id + '@' : '') +
+            project.repo.location +
+            (project.repo.location === 'bitbucket' ? '.org' : '.com') +
+            (project.repo.protocol === 'https' ? '/' : ':') +
+            project.repo.id + '/' +
+            project.name.toLowerCase() + '.git'  %>"
+    },
+    "keywords": [<% _.forEach(project.keywords, function (keyword, i) { %>"<%= keyword %>"<% if (i !== project.keywords.length - 1) { %>, <% }}) %>]
+}
