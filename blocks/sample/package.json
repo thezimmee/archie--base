@@ -1,0 +1,33 @@
+{
+    "name": "<%= project.name %>",
+    "version": "<%= project.version %>"<% if (project.private) { %>,
+    "private": true<% } %><% if (project.description) { %>,
+    "description": "<%= project.description %>"<% } %>,
+    "author": {
+        "name": "<%= project.author.name %>"<% if (project.author.email) { %>,
+        "email": "<%= project.author.email %>"<% } %><% if (project.author.url) { %>,
+        "url": "<%= project.author.url %>"<% } %>
+    },
+    "license": "<%= project.license %>"<% if (project.bugs) { %>,
+    "bugs": {
+        "url": "<%= project.bugs %>"
+    }<% } %><% if (project.homepage) { %>,
+    "homepage": "<%= project.homepage %>"<% } %>,
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "pug": "^2.0.0-beta11",
+        "pug-cli": "^1.0.0-alpha6"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:pug": "pug <%= globs.pages %> --out <%= dirs.dest %> --basedir .",
+        "postbuild:pug": "for file in <%= dirs.dest %>/*.html.html; do mv \"$file\" \"<%= '${file%.html.html}.html' %>\"; done",
+        "watch:pug": "npm run build:pug -- --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "<%= project.repo.url %>"
+    }<% if (project.keywords.length) { %>,
+    "keywords": [<% _.forEach(project.keywords, function (keyword, i) { %>"<%= keyword %>"<% if (i !== project.keywords.length - 1) { %>, <% }}) %>]<% } %>
+}

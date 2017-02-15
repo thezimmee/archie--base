@@ -1,0 +1,47 @@
+{
+  "name": "archie",
+  "description": "Archie the Architect is a static website generator and front end framework. Archie aims to be light and full featured, providing everything you need, but also flexible and composable so you can use only what you want.",
+  "version": "0.0.1",
+  "author": "The Zimmee <thezimmee@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thezimmee/archie/issues"
+  },
+  "homepage": "https://github.com/thezimmee/archie#readme",
+  "main": "bin/archie.js",
+  "dependencies": {
+    "blue-tape": "^1.0.0",
+    "bluebird": "^3.4.7",
+    "commander": "^2.9.0",
+    "fs-extra": "^2.0.0",
+    "glob": "^7.1.1",
+    "inquirer": "^3.0.4",
+    "lodash": "^4.17.4",
+    "pug": "^2.0.0-beta11",
+    "pug-cli": "^1.0.0-alpha6",
+    "shelljs": "^0.7.6"
+  },
+  "bin": {
+    "archie": "bin/archie.js"
+  },
+  "scripts": {
+    "test": "archie test:archie",
+    "test:archie": "tape tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thezimmee/archie.git"
+  },
+  "keywords": [
+    "archie",
+    "architect",
+    "static",
+    "website",
+    "site",
+    "generator",
+    "front",
+    "end",
+    "css",
+    "framework"
+  ]
+}

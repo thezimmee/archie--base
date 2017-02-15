@@ -1,0 +1,33 @@
+{
+    "name": "archie",
+    "version": "0.0.1",
+    "private": true,
+    "description": "This is my project.",
+    "author": {
+        "name": "Zimmee",
+        "email": "thezimmee@gmail.com",
+        "url": "https://github.com/thezimmee/archie"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/thezimmee/archie/issues"
+    },
+    "homepage": "https://github.com/thezimmee/archie",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "pug": "^2.0.0-beta11",
+        "pug-cli": "^1.0.0-alpha6"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:pug": "pug src/**/*.html.pug --obj src/**/*.data.json --out dest --basedir .",
+        "postbuild:pug": "for file in dest/*.html.html; do mv \"$file\" \"${file%.html.html}.html\"; done",
+        "watch:pug": "npm run build:pug -- --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:thezimmee/archie.git"
+    },
+    "keywords": ["static", "site", "generator", "front", "end", "css", "framework"]
+}
