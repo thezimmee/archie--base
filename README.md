@@ -1,4 +1,4 @@
-# ARCHIE
+# ARCHIE :blush:
 
 > Archie the Architect aims to be a full-featured static website generator and front end framework, built with the philosophy of components. Only use the features you want.
 
